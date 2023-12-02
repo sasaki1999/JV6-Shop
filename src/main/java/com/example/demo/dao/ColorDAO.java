@@ -1,7 +1,7 @@
-// package com.example.demo.dao;
-// import org.springframework.data.jpa.repository.JpaRepository;
+package com.example.demo.dao;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-// import com.example.demo.entity.ColorEntity;
-// public interface ColorDAO extends JpaRepository<ColorEntity, Long> {
+import com.example.demo.entity.ColorEntity;
+public interface ColorDAO extends JpaRepository<ColorEntity, String> {
 
-// }
+}
