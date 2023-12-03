@@ -31,7 +31,7 @@ public class ColorEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "color_id", nullable = false)
-    private Long ColorId;
+    private String ColorId;
 
     @Column(name = "color_name")
     @NotEmpty(message = "Color name not empty")

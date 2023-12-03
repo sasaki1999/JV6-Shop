@@ -29,15 +29,6 @@ public class PaymentEntity {
   @Column(name = "payment_id", nullable = false)
   private Long id;
 
-  @Column(name = "card_number")
-  private double cardNumber;
-
-  @Column(name = "card_name")
-  private String cardName;
-
-  @Column(name = "payment_address")
-  private String paymentAddress;
-
   @Column(name = "total_amount")
   private double total_Amount;
 

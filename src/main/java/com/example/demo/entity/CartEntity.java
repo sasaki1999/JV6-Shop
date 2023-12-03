@@ -27,7 +27,7 @@ public class CartEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "cart_id", nullable = false)
-    private Integer cartId;
+    private Long cartId;
 
     @Column(name = "quantity")
     @NotEmpty(message = "Quantity not empty")

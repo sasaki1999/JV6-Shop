@@ -33,7 +33,7 @@ public class SizeEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "size_id", nullable = false)
-    private Long SizeId;
+    private String SizeId;
 
     @Column(name = "size_name")
     @NotEmpty(message = "Size name not empty")

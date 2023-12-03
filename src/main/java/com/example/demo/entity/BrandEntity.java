@@ -33,7 +33,7 @@ public class BrandEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "brand_id", nullable = false)
-    private Long BrandId;
+    private String BrandId;
 
     @Column(name = "Brand_name")
     @NotEmpty(message = "Name Brand not empty")

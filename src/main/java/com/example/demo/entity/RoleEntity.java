@@ -31,7 +31,7 @@ public class RoleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "role_id", nullable = false)
-    private Long roleId;
+    private String roleId;
     
     @Column(name = "role_name", unique = true)
     @NotEmpty(message = "Role_Name not empty")

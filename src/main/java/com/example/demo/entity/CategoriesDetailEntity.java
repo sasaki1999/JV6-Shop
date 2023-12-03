@@ -32,7 +32,7 @@ public class CategoriesDetailEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "categoriesDetail_id", nullable = false)
-  private Long CategoriesDetailId;
+  private String CategoriesDetailId;
 
   @Column(name = "categoriesDetail_name")
   @NotEmpty(message = "Categories detail name not empty")

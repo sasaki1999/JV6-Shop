@@ -1,9 +1,9 @@
-// package com.example.demo.dao;
+package com.example.demo.dao;
 
 
-// import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-// import com.example.demo.entity.OrderDetailEntity;
-// public interface OrderDetailDAO extends JpaRepository<OrderDetailEntity, Long>{
+import com.example.demo.entity.OrderDetailEntity;
+public interface OrderDetailDAO extends JpaRepository<OrderDetailEntity, Long>{
 
-// }
+}

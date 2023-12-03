@@ -31,7 +31,7 @@ public class CategoriesEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "categories_id", nullable = false)
-    private Long CategoriesId;
+    private String CategoriesId;
 
     @Column(name = "categories_name")
     @NotEmpty(message = "Categories name not empty")
