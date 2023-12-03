@@ -28,10 +28,10 @@
             <!-- --------------------------------------------------------- -->
             <div class="card">
                     <div class="card-body">
-                        <form action="">
+                        <form action="" th:object="${product}">
                             <div class="row">
                                 <div class="col-lg-3">
-                                    <form class="file-upload-form">
+                                    <!-- <form class="file-upload-form"> -->
                                         <label for="file" class="file-upload-label">
                                           <div class="file-upload-design">
                                             <svg viewBox="0 0 640 512" height="1em">
@@ -45,14 +45,14 @@
                                           </div>
                                           <input id="file" type="file" />
                                         </label>
-                                      </form>
+                                      <!-- </form> -->
                                 </div>
                                 <div class="col-lg-9">
                                     <div class="row">
                                         <div class="col-lg-6 mb-3">
-                                            <label for="" class="form-label">Tên sản phẩm</label>
-                                            <input type="text" name="" id="" class="input-rounded form-control" placeholder="" aria-describedby="helpId">
-                                            <small id="helpId" class="text-muted">Help text</small>
+                                            <label for="product_name" class="form-label">Tên sản phẩm</label>
+                                            <input type="text" name="" id="product_name" class="input-rounded form-control" placeholder="" aria-describedby="helpId">
+                                            <small class="text-danger">Help text</small>
                                           </div>
                                           <div class="col-lg-6 mb-3">
                                               <label for="" class="form-label">Loại sản phẩm</label>
@@ -61,7 +61,7 @@
                                                   <option value="">dsa</option>
                                                   <option value="">dsa</option>
                                               </select>
-                                              <small id="helpId" class="text-muted">Help text</small>
+                                              <small id="helpId" class="text-danger">Help text</small>
                                             </div>
                                             <div class="col-lg-6 mb-3">
                                               <label for="" class="form-label">Thương hiệu</label>
@@ -70,16 +70,16 @@
                                                   <option value="">dsa</option>
                                                   <option value="">dsa</option>
                                               </select>
-                                              <small id="helpId" class="text-muted">Help text</small>
+                                              <small id="helpId" class="text-danger">Help text</small>
                                             </div>
                                             <div class=" col-lg-6 mb-3">
-                                              <label for="" class="form-label">Giá</label>
-                                              <input type="number" name="" id="" class="input-rounded form-control" placeholder="" aria-describedby="helpId">
-                                              <small id="helpId" class="text-muted">Help text</small>
+                                              <label for="price" class="form-label">Giá</label>
+                                              <input type="number" name="" id="price" class="input-rounded form-control" placeholder="" aria-describedby="helpId">
+                                              <small id="helpId" class="text-danger">Help text</small>
                                             </div>
                                             <div class="col-lg-12 mb-3">
-                                              <label for="" class=" form-label">ádsadas</label>
-                                              <textarea class="form-control" name="" id="" rows="3"></textarea>
+                                              <label for="description" class=" form-label">Miêu tả sản phẩm</label>
+                                              <textarea class="form-control" name="" id="description" rows="3"></textarea>
                                             </div>
                                     </div>
                                     <button type="button"class="btn btn-xs m-1 btn-rounded btn-info"><span class="btn-icon-left text-info"><i class="fa fa-plus color-info"></i>
