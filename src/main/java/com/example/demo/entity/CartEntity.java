@@ -25,15 +25,9 @@ import lombok.Setter;
 @Table(name = "Cart")
 public class CartEntity {
     @Id
-<<<<<<< HEAD
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_id", nullable = false)
     private Integer cartId;
-=======
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "cart_id", nullable = false)
-    private Long cartId;
->>>>>>> a0055219833e44ed740e1595573fb0fe64cfbfc8
 
     @Column(name = "quantity")
     @NotEmpty(message = "Quantity not empty")

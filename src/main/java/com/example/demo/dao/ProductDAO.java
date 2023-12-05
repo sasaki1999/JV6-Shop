@@ -2,6 +2,6 @@ package com.example.demo.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.entity.ProductEntity;
-public interface ProductDAO extends JpaRepository<ProductEntity, Long>{
+public interface ProductDAO extends JpaRepository<ProductEntity, Integer>{
 
 }

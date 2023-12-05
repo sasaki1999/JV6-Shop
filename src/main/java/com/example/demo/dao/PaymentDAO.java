@@ -3,6 +3,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 import com.example.demo.entity.PaymentEntity;
-public interface PaymentDAO extends JpaRepository<PaymentEntity, Long>{
+public interface PaymentDAO extends JpaRepository<PaymentEntity, Integer>{
 
 }
