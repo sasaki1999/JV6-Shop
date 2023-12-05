@@ -29,9 +29,15 @@ import lombok.Setter;
 @Table(name = "Categories")
 public class CategoriesEntity implements Serializable {
     @Id
+<<<<<<< HEAD
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "categories_id", nullable = false)
     private Integer CategoriesId;
+=======
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "categories_id", nullable = false)
+    private String CategoriesId;
+>>>>>>> a0055219833e44ed740e1595573fb0fe64cfbfc8
 
     @Column(name = "categories_name")
     @NotEmpty(message = "Categories name not empty")

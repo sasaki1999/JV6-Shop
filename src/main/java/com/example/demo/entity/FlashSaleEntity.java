@@ -26,9 +26,15 @@ import lombok.NoArgsConstructor;
 @Table(name = "FlashSale")
 public class FlashSaleEntity {
     @Id
+<<<<<<< HEAD
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "flashSale_id", nullable = false)
     private Integer FlashSaleId;
+=======
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "flashSale_id", nullable = false)
+    private Long FlashSaleId;
+>>>>>>> a0055219833e44ed740e1595573fb0fe64cfbfc8
 
     @Column(name = "flashSale_price")
     @NotEmpty(message = "Flash Sale Price not empty")

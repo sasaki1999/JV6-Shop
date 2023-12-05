@@ -1,8 +1,8 @@
-// package com.example.demo.dao;
-// import org.springframework.data.jpa.repository.JpaRepository;
+package com.example.demo.dao;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 
-// import com.example.demo.entity.BrandEntity;
-// public interface BrandDAO extends JpaRepository<BrandEntity, Long>{
+import com.example.demo.entity.BrandEntity;
+public interface BrandDAO extends JpaRepository<BrandEntity, String>{
 
-// }
+}
