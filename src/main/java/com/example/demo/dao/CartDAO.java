@@ -3,6 +3,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 import com.example.demo.entity.CartEntity;
-public interface CartDAO extends JpaRepository<CartEntity, Long>{
+public interface CartDAO extends JpaRepository<CartEntity, Integer>{
 
 }

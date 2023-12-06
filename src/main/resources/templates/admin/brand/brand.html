@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" th:debug="true" th:replace="~{admin/fragments/layout :: fragments(~{::main})}" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="container-fluid">
+            <div class="row page-titles mx-0">
+                <div class="col-sm-6 p-md-0">
+                    <div class="welcome-text">
+                        <h4>LOẠI SẢN PHẨM CHI TIẾT</h4>
+                    </div>
+                </div>
+                <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Layout</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Blank</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- --------------------------------------------------------- -->
+            <div class="row">
+                <div class="col-12">
+                    <a href="/admin/brand/showadd">
+                        <button style="float: right;" type="button" class="btn m-3 btn-primary">Add Brand<span class="btn-icon-right"><i class="fa fa-shopping-cart"></i></span>
+                        </button>
+                    </a>
+                    
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Bordered Table</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered verticle-middle table-responsive-sm">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">STT</th>
+                                            <th scope="col">LSP Chi tiết</th>
+                                            <th scope="col">Label</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="item,index : ${pages.content}" th:count="*{index.index}">
+                                            <td th:text="${index.count}"></td>
+                                            <td th:text="${item.CategoriesDetailName}"></td>
+                                            <td th:text="${item.categories.CategoriesName}"></td>
+                                            <td>
+                                                <span>
+                                                    <a th:href="@{/admin/brand/edit/{id}(id=${item.CategoriesDetailId})}" class="mr-4" data-toggle="tooltip"
+                                                        data-placement="top" title="Edit"><i
+                                                            class="fa fa-pencil color-muted"></i> </a>
+                                                    <a th:href="@{/admin/brand/delete/{id}(id=${item.CategoriesDetailId})}" data-toggle="tooltip"
+                                                        data-placement="top" title="Close"><i
+                                                            class="fa fa-close color-danger"></i></a>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                                <!-- Pagination -->
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination justify-content-center">
+                                        <li th:each="number : ${#numbers.sequence(1, pages.totalPages)}"
+                                            th:class="${currentPage==number-1 ? 'page-item active' : 'page-item'}">
+                                            <a class="page-link" th:href="@{/admin/categoriesDetail?p={num}(num=${number-1})}"
+                                                th:text="${number}"></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</body>
+
+</html>

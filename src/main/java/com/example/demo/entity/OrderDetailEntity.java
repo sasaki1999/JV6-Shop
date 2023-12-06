@@ -22,9 +22,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "Order_Detail")
 public class OrderDetailEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "orderDetail_id")
-    private Long OrderDetailId;
+    private Integer OrderDetailId;
 
     @ManyToOne
     @JoinColumn(name = "order_id")

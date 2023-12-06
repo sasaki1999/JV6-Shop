@@ -3,6 +3,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 import com.example.demo.entity.FlashSaleEntity;
-public interface FlashSaleDAO extends JpaRepository<FlashSaleEntity, Long>{
+public interface FlashSaleDAO extends JpaRepository<FlashSaleEntity, Integer>{
 
 }

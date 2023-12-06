@@ -13,10 +13,10 @@ public interface AdminCategoryService {
 	
 	public Optional<CategoriesEntity> findById(Integer id) ;
 
-	public CategoriesEntity create(CategoriesEntity major) ;
+	public CategoriesEntity create(CategoriesEntity categories) ;
 
-	public CategoriesEntity update(CategoriesEntity major) ;
+	public CategoriesEntity update(CategoriesEntity categories) ;
 
-	public void delete(Integer id) ;
+	public void delete(CategoriesEntity categories) ;
     
 }

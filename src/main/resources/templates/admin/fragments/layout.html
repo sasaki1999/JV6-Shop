@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" th:fragment="fragments(content)" >
+<html lang="en" th:fragment="fragments(content)" xmlns:th="http://www.thymeleaf.org" >
 
 <head>
     <meta charset="UTF-8" />
@@ -8,23 +8,23 @@
 
 
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../../admin/images/favicon.png" />
-    <link rel="stylesheet" href="../../admin/vendor/owl-carousel/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="../../admin/vendor/owl-carousel/css/owl.theme.default.min.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../../admin/images/favicon.png" />
+    <link rel="stylesheet" href="../../../../admin/vendor/owl-carousel/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../../../../admin/vendor/owl-carousel/css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="../../admin/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet" />
-    <link href="../../admin/vendor/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet" />
-    <link href="../../admin/vendor/chartist/css/chartist.min.css" rel="stylesheet" />
+    <link href="../../../../admin/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet" />
+    <link href="../../../../admin/vendor/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet" />
+    <link href="../../../../admin/vendor/chartist/css/chartist.min.css" rel="stylesheet" />
 
     <!-- Datatable -->
-    <link href="../../admin/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="../../../../admin/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 
     
-    <link href="../../admin/css/perfect-scrollbar.css" rel="stylesheet" />
-    <link href="../../admin/css/style.css.map" rel="stylesheet" />
-    <link href="../../admin/css/style.css" rel="stylesheet" />
+    <link href="../../../../admin/css/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="../../../../admin/css/style.css.map" rel="stylesheet" />
+    <link href="../../../../admin/css/style.css" rel="stylesheet" />
 
 
 
@@ -97,9 +97,9 @@
         ***********************************-->
         <div class="nav-header">
             <a th:href="@{/admin/index}" class="brand-logo">
-                <img class="logo-abbr" src="../../admin/images/logo.png" alt="" />
-                <img class="logo-compact" src="../../admin/images/logo-text.png" alt="" />
-                <img class="brand-title" src="../../admin/images/logo-text.png" alt="" />
+                <img class="logo-abbr" src="../../../../admin/images/logo.png" alt="" />
+                <img class="logo-compact" src="../../../../admin/images/logo-text.png" alt="" />
+                <img class="brand-title" src="../../../../admin/images/logo-text.png" alt="" />
             </a>
 
             <div class="nav-control">
@@ -199,11 +199,11 @@
                                     <i class="mdi mdi-account"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="../../app-profile.html" class="dropdown-item">
+                                    <a href="../../../../app-profile.html" class="dropdown-item">
                                         <i class="icon-user"></i>
                                         <span class="ml-2">Profile </span>
                                     </a>
-                                    <a href="../../email-inbox.html" class="dropdown-item">
+                                    <a href="../../../../email-inbox.html" class="dropdown-item">
                                         <i class="icon-envelope-open"></i>
                                         <span class="ml-2">Inbox </span>
                                     </a>
@@ -235,7 +235,7 @@
                             <span class="nav-text">QUẢN LÝ SẢN PHẨM</span></a>
                         <ul aria-expanded="false">
                             <li><a th:href="@{/admin/product}">SẢN PHẨM</a></li>
-                            <li><a th:href="@{/admin/categories}">LOẠI SẢN PHẢM CHI TIẾT</a></li>
+                            <li><a th:href="@{/admin/categoriesDetail}">LOẠI SẢN PHẢM CHI TIẾT</a></li>
                             <li><a th:href="@{/admin/bard}">THƯƠNG HIỆU</a></li>
                         </ul>
                     </li>
@@ -320,27 +320,27 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
      -->
     <!-- Required vendors -->
-    <script src="../../admin/vendor/global/global.min.js"></script>
-    <script src="../../admin/js/quixnav-init.js"></script>
-    <script src="../../admin/js/custom.min.js"></script>
+    <script src="../../../../admin/vendor/global/global.min.js"></script>
+    <script src="../../../../admin/js/quixnav-init.js"></script>
+    <script src="../../../../admin/js/custom.min.js"></script>
 
     
     <!-- Vectormap -->
-    <script src="../../admin/vendor/raphael/raphael.min.js"></script>
-    <script src="../../admin/vendor/morris/morris.min.js"></script>
+    <script src="../../../../admin/vendor/raphael/raphael.min.js"></script>
+    <script src="../../../../admin/vendor/morris/morris.min.js"></script>
 
-    <script src="../../admin/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="../../admin/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="../../../../admin/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="../../../../admin/vendor/chart.js/Chart.bundle.min.js"></script>
 
-    <script src="../../admin/vendor/gaugeJS/dist/gauge.min.js"></script>
+    <script src="../../../../admin/vendor/gaugeJS/dist/gauge.min.js"></script>
 
     <!--  flot-chart js -->
-    <script src="../../admin/vendor/flot/jquery.flot.js"></script>
-    <script src="../../admin/vendor/flot/jquery.flot.resize.js"></script>
+    <script src="../../../../admin/vendor/flot/jquery.flot.js"></script>
+    <script src="../../../../admin/vendor/flot/jquery.flot.resize.js"></script>
 
-    <script src="../../admin/vendor/global/global.min.js"></script>
-    <script src="../../admin/js/quixnav-init.js"></script>
-    <script src="../../admin/js/custom.min.js"></script>
+    <script src="../../../../admin/vendor/global/global.min.js"></script>
+    <script src="../../../../admin/js/quixnav-init.js"></script>
+    <script src="../../../../admin/js/custom.min.js"></script>
     
 
    
@@ -348,32 +348,32 @@
     
     
     <!-- Datatable -->
-    <script src="../../admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../../admin/js/plugins-init/datatables.init.js"></script>
+    <script src="../../../../admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../../../../admin/js/plugins-init/datatables.init.js"></script>
 
     <!-- Owl Carousel -->
-    <script src="../../admin/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+    <script src="../../../../admin/vendor/owl-carousel/js/owl.carousel.min.js"></script>
    
     <!-- Counter Up -->
-    <script src="../../admin/vendor/jqvmap/js/jquery.vmap.min.js"></script>
-    <script src="../../admin/vendor/jqvmap/js/jquery.vmap.usa.js"></script>
-    <script src="../../admin/vendor/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="../../../../admin/vendor/jqvmap/js/jquery.vmap.min.js"></script>
+    <script src="../../../../admin/vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+    <script src="../../../../admin/vendor/jquery.counterup/jquery.counterup.min.js"></script>
 
-    <script src="../../admin/js/dashboard/dashboard-1.js"></script>
+    <script src="../../../../admin/js/dashboard/dashboard-1.js"></script>
 
-    <script src="../../admin/vendor/global/global.min.js"></script>
-    <script src="../../admin/js/quixnav-init.js"></script>
-    <script src="../../admin/js/custom.min.js"></script>
+    <script src="../../../../admin/vendor/global/global.min.js"></script>
+    <script src="../../../../admin/js/quixnav-init.js"></script>
+    <script src="../../../../admin/js/custom.min.js"></script>
 
-    <script src="../../admin/vendor/chartist/js/chartist.min.js"></script>
+    <script src="../../../../admin/vendor/chartist/js/chartist.min.js"></script>
 
-    <script src="../../admin/vendor/moment/moment.min.js"></script>
-    <script src="../../admin/vendor/pg-calendar/js/pignose.calendar.min.js"></script>
+    <script src="../../../../admin/vendor/moment/moment.min.js"></script>
+    <script src="../../../../admin/vendor/pg-calendar/js/pignose.calendar.min.js"></script>
     
-    <script src="../../admin/js/dashboard/dashboard-2.js"></script>
+    <script src="../../../../admin/js/dashboard/dashboard-2.js"></script>
 
     <!-- Chart Morris plugin files -->
-    <script src="../../admin/js/plugins-init/morris-init.js"></script>
+    <script src="../../../../admin/js/plugins-init/morris-init.js"></script>
 </body>
 
 </html>

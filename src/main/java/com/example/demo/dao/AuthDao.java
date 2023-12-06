@@ -3,6 +3,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 import com.example.demo.entity.AuthEntity;
-public interface AuthDao extends JpaRepository<AuthEntity, Long>{
+public interface AuthDao extends JpaRepository<AuthEntity, Integer>{
 
 }

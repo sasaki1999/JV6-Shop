@@ -3,18 +3,20 @@ package com.example.demo.service.admin.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dao.BrandDAO;
 import com.example.demo.entity.BrandEntity;
 import com.example.demo.service.admin.AdminBrandService;
 
 @Service
 public class AdminBrandServiceImpl implements AdminBrandService {
-        
+    @Autowired
+    BrandDAO brandDAO;
     @Override
     public List<BrandEntity> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+        return brandDAO.findAll();
     }
 
     @Override

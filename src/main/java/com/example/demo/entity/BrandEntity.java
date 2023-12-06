@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import java.util.List;
 
+import org.hibernate.annotations.Nationalized;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -31,16 +33,19 @@ import lombok.Setter;
 @Table(name = "Brand")
 public class BrandEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "brand_id", nullable = false)
-    private String BrandId;
+     Integer BrandId;
 
+    @Nationalized
     @Column(name = "Brand_name")
     @NotEmpty(message = "Name Brand not empty")
-    private String BrandName;
+     String BrandName;
 
     @JsonIgnore
     @OneToMany(mappedBy = "brand")
     List<ProductEntity> product;
 
+
 }
+

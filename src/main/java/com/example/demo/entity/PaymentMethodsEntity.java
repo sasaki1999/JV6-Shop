@@ -23,9 +23,9 @@ import lombok.Setter;
 @Table(name = "Payment_methods")
 public class PaymentMethodsEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "paymentMethod_id", nullable = false)
-    private Long paymentMethodId;
+    private Integer paymentMethodId;
 
     @Column(name = "paymentMethod_type")
     private String paymentMethodType;

@@ -3,9 +3,11 @@ package com.example.demo.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import org.hibernate.annotations.Nationalized;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,10 +31,11 @@ import lombok.Setter;
 @Table(name = "Categories")
 public class CategoriesEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "categories_id", nullable = false)
-    private String CategoriesId;
+    private Integer CategoriesId;
 
+    @Nationalized
     @Column(name = "categories_name")
     @NotEmpty(message = "Categories name not empty")
     private String CategoriesName;

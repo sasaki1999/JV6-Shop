@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{/admin/fragments/layout :: fragments(~{::main})}" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="container-fluid">
+            <div class="row page-titles mx-0">
+                <div class="col-sm-6 p-md-0">
+                    <div class="welcome-text">
+                        <h4>THÊM SẢN PHẨM</h4>
+                    </div>
+                </div>
+                <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Layout</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">product</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- --------------------------------------------------------- -->
+            <div th:if="${message}" th:text="${message}" class="alert alert-success" role="alert"></div>
+            <div class="card">
+                <div class="card-body">
+                    <form th:action="@{/admin/categoriesDetail/update/{id}(id=${categoriesDetail.CategoriesDetailId})}"  th:object="${categoriesDetail}" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="" class="form-label">-- Select an option --</label>
+                            <select th:field="*{categories.CategoriesId}" id="input" class="form-control">
+                                <option value=""  selected="selected">chọn</option>
+                                <option th:each="ca : ${categoriesAll}" th:value="${ca.CategoriesId}"
+                                    th:text="${ca.CategoriesName}"></option>
+                            </select>
+                            <small class="text-danger" th:if="${#fields.hasErrors('categories.CategoriesId')}"
+                                th:errors="*{categories}">Help text</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Name</label>
+                            <input type="text" th:field="*{CategoriesDetailName}" class="form-control"
+                                placeholder="">
+                            <small class="text-danger" th:if="${#fields.hasErrors('CategoriesDetailName')}"
+                                th:errors="*{CategoriesDetailName}">Help text</small>
+                        </div>
+                        <!-- <button th:formaction="@{/admin/categoriesDetail/add}"
+                            class="btn btn-xs m-1 btn-rounded btn-info"><span class="btn-icon-left text-info"><i
+                                    class="fa fa-plus color-info"></i>
+                            </span>Thêm</button> -->
+                        <button type="submit" class="btn btn-xs m-1 btn-rounded btn-warning"><span
+                                class="btn-icon-left text-info"><i class="fa-solid fa-pen"></i>
+                            </span>Sửa</button>
+                        <!-- <button type="button" class="btn btn-xs m-1 btn-rounded btn-danger"><span
+                                class="btn-icon-left text-info"><i class="fa-solid fa-xmark"></i>
+                            </span>Xóa</button>
+                        <button type="button" class="btn btn-xs m-1 btn-rounded btn-success"><span
+                                class="btn-icon-left text-info"><i class="fa-solid fa-rotate-left"></i>
+                            </span>Làm mới</button> -->
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

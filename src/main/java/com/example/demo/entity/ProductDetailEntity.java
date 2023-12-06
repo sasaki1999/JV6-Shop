@@ -31,9 +31,9 @@ import lombok.Setter;
 @Table(name = "ProductDetail")
 public class ProductDetailEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "productDetail_id", nullable = false)
-    private Long ProductDetailId;
+    private Integer ProductDetailId;
 
     @Column(name = "quality")
     @NotEmpty(message = "Quality not empty")

@@ -11,10 +11,6 @@ public class HomeController {
     public String index() {
         return "admin/index";
     }
+    
 
-    @GetMapping("/categories")
-    public String categories() {
-        return "admin/category";
-        
-    }
 }

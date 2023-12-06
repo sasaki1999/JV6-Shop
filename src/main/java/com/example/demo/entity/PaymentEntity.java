@@ -25,9 +25,9 @@ import lombok.Setter;
 @Table(name = "Payment")
 public class PaymentEntity {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "payment_id", nullable = false)
-  private Long id;
+  private Integer id;
 
   @Column(name = "total_amount")
   private double total_Amount;

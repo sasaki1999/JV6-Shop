@@ -1,0 +1,101 @@
+<!DOCTYPE html >
+<html lang="en" th:replace="~{admin/fragments/layout :: fragments(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="container-fluid">
+            <div class="row page-titles mx-0">
+                <div class="col-sm-6 p-md-0">
+                    <div class="welcome-text">
+                        <h4>SẢN PHẨM</h4>
+                    </div>
+                </div>
+                <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Layout</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">product</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- --------------------------------------------------------- -->
+            
+            <div class="row">
+                <div class="col-12">
+                    <a href="/admin/product/showadd">
+                        <button style="float: right;" type="button" class="btn m-3 btn-primary">Add to cart <span class="btn-icon-right"><i class="fa fa-shopping-cart"></i></span>
+                        </button>
+                    </a>
+                    
+                </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Basic Datatable</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="example" class="display" style="min-width: 845px">
+                                    <thead>
+                                        <tr>
+                                            <th>Ảnh sản phẩm</th>
+                                            <th>Tên sản Phẩm</th>
+                                            <th>Giá sản Phẩm</th>
+                                            <th>Loại sản phẩm</th>
+                                            <th>Thương hiệu</th>
+                                            <th>Miểu tả sản phẩm</th>
+                                            <th>Hoạt động</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="item : ${products}">
+                                            <td>
+                                                <div class="round-img">
+                                                    <a href="/admin/order"><img width="35" th:src="@{/admin/uploads/{img}(img=${item.ProductImage})}" alt=""></a>
+                                                </div>
+                                            </td>
+                                            <td th:text="${item.ProductName}"></td>
+                                            <td th:text="${item.ProductPrice}"></td>
+                                            <td th:text="${item.categoriesDetail.CategoriesDetailName}"></td>
+                                            <td th:text="${item.brand.BrandName}"></td>
+                                            <th th:text="${item.ProductDescription}"></th>
+                                            <td>
+                                                <span>
+                                                    <a th:href="@{/admin/product/edit/{id}(id=${item.ProductId})}" class="mr-4" data-toggle="tooltip"
+                                                        data-placement="top" title="Edit"><i
+                                                            class="fa fa-pencil color-muted"></i> </a>
+                                                    <a th:href="@{/admin/product/delete/{id}(id=${item.ProductId})}" data-toggle="tooltip"
+                                                        data-placement="top" title="Close"><i
+                                                            class="fa fa-close color-danger"></i></a>
+                                                </span>
+                                            </td>
+                                            
+                                    
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Ảnh sản phẩm</th>
+                                            <th>Tên sản Phẩm</th>
+                                            <th>Giá sản Phẩm</th>
+                                            <th>Loại sản phẩm</th>
+                                            <th>Thương hiệu</th>
+                                            <th>Miểu tả sản phẩm</th>
+                                            <th>Hoạt động</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+</body>
+</html>

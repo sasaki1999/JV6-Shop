@@ -7,8 +7,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/admin")
 public class BardController {
-    @GetMapping("/bard")
-    public String show() {
-        return "/admin/bard";
-    }
+    
 }
