@@ -25,9 +25,9 @@ import lombok.Setter;
 @Table(name = "Cart")
 public class CartEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_id", nullable = false)
-    private Long cartId;
+    private Integer cartId;
 
     @Column(name = "quantity")
     @NotEmpty(message = "Quantity not empty")

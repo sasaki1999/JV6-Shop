@@ -26,9 +26,9 @@ import java.io.Serializable;
 @Table(name = "Auth")
 public class AuthEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "auth_id", nullable = false)
-    private Long AuthId;
+    private Integer AuthId;
 
     @ManyToOne
     @JoinColumn(name = "account_id")

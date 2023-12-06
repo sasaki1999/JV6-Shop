@@ -3,6 +3,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 import com.example.demo.entity.CategoriesEntity;
-public interface CategoriesDAO extends JpaRepository<CategoriesEntity, String>{
+public interface CategoriesDAO extends JpaRepository<CategoriesEntity, Integer>{
 
 }

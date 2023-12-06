@@ -2,7 +2,6 @@ package com.example.demo.entity;
 
 import java.util.List;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -14,7 +13,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -30,20 +28,20 @@ import lombok.Setter;
 @Table(name = "CategoriesDetail")
 public class CategoriesDetailEntity {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "categoriesDetail_id", nullable = false)
-  private String CategoriesDetailId;
+  private Integer CategoriesDetailId;
 
   @Column(name = "categoriesDetail_name")
-  @NotEmpty(message = "Categories detail name not empty")
+  // @NotEmpty(message = "Categories detail name not empty")
   private String CategoriesDetailName;
 
   @ManyToOne
   @JoinColumn(name = "categories_id")
-   CategoriesEntity categories;
+  CategoriesEntity categories;
 
-   @JsonIgnore
-   @OneToMany(mappedBy = "categoriesDetail")
-   List<ProductEntity> product;
+  @JsonIgnore
+  @OneToMany(mappedBy = "categoriesDetail")
+  List<ProductEntity> product;
 
 }

@@ -31,9 +31,9 @@ import lombok.Setter;
 @Table(name = "Brand")
 public class BrandEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "brand_id", nullable = false)
-    private String BrandId;
+    private Integer BrandId;
 
     @Column(name = "Brand_name")
     @NotEmpty(message = "Name Brand not empty")

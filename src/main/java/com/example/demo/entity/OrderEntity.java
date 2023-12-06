@@ -29,9 +29,9 @@ import lombok.NoArgsConstructor;
 @Table(name = "Orders")
 public class OrderEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
-    private Long orderId;
+    private Integer orderId;
     @Column(name = "order_date")
     private Date orderDate = new Date();
     @Column(name = "order_status")

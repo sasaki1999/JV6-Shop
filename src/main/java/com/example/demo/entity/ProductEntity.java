@@ -20,17 +20,13 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 @SuppressWarnings("serial")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -38,24 +34,24 @@ import lombok.Setter;
 @Table(name = "Product")
 public class ProductEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "product_id", nullable = false)
-    private Long ProductId;
+    private Integer ProductId;
 
+    @NotBlank(message = "Product name not empty")
     @Column(name = "product_name")
-    @NotEmpty(message = "Product name not empty")
     private String ProductName;
 
     @Column(name = "product_description")
     private String ProductDescription;
 
+    //@NotNull(message = "Product image not empty")
     @Column(name = "product_image")
-    @NotEmpty(message = "Product image not empty")
     private String ProductImage;
 
-    @Column(name = "product_price")
     @Min (value =  0 , message = "Price > 0")
 	@NotNull
+    @Column(name = "product_price")
     private BigDecimal ProductPrice;
 
 
@@ -64,16 +60,22 @@ public class ProductEntity implements Serializable {
     @OneToMany(mappedBy = "product")
     List<ProductDetailEntity> productDetail;
 
-     @JsonIgnore
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     List<FlashSaleEntity> flashSale;
 
     @ManyToOne
     @JoinColumn(name = "brand_id")
+    @NotNull(message = "not null")
     BrandEntity brand;
 
+    
     @ManyToOne
     @JoinColumn(name = "categoriesDetail_id")
+    @NotNull(message = "not null")
     CategoriesDetailEntity categoriesDetail;
+
+
+    
 
 }

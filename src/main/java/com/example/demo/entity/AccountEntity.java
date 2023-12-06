@@ -34,9 +34,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "Account")
 public class AccountEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id",nullable = false)
-    private Long accountId;
+    private Integer accountId;
     
     @Column(name = "user_name")
     @NotEmpty(message = "Username not empty")
