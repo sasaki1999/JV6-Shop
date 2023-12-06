@@ -37,84 +37,29 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Tên khách hàng</th>
+                                            <th>Ảnh sản phẩm</th>
                                             <th>Tên sản phẩm</th>
                                             <th>số lượng sản phẩm</th>
                                             <th>Giá</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
+                                        <tr th:each="orderDetail,index : ${orderDetails}" th:count="*{index.index}">
+                                            <td th:text="${index.count}"></td>
                                             <td>
                                                 <div class="round-img">
-                                                    <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
+                                                    <img width="35" th:src="@{/admin/uploads/{img}(img=${orderDetail.productDetail.product.ProductImage})}" alt="">
                                                 </div>
                                             </td>
-                                            <td>Lew Shawon</td>
-                                            <td><span>Dell-985</span></td>
-                                            <td><span>2</span></td>
-                                            <td><span >500</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="round-img">
-                                                    <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td>Lew Shawon</td>
-                                            <td><span>Asus-565</span></td>
-                                            <td><span>2</span></td>
-                                            <td><span >500</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="round-img">
-                                                    <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td>lew Shawon</td>
-                                            <td><span>Dell-985</span></td>
-                                            <td><span>2</span></td>
-                                            <td><span >500</span></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <div class="round-img">
-                                                    <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td>Lew Shawon</td>
-                                            <td><span>Asus-565</span></td>
-                                            <td><span>2</span></td>
-                                            <td><span >500</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="round-img">
-                                                    <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td>lew Shawon</td>
-                                            <td><span>Dell-985</span></td>
-                                            <td><span>2</span></td>
-                                            <td><span >500</span></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <div class="round-img">
-                                                    <a href=""><img width="35" src="./images/avatar/1.png" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td>Lew Shawon</td>
-                                            <td><span>Asus-565</span></td>
-                                            <td><span>2</span></td>
-                                            <td><span >500</span></td>
+                                            <td th:text="${orderDetail.productDetail.product.ProductName}"></td>
+                                            <td><span th:text="${#numbers.formatDecimal(orderDetail.productDetail.quality,0,'POINT',0,'POINT')}"></span></td>
+                                            <td><span th:text="${#numbers.formatDecimal(orderDetail.productDetail.price,0,'POINT',3,'POINT')}"></span></td>
+                                            <td><span th:text="${#numbers.formatDecimal(orderDetail.productDetail.quality*orderDetail.productDetail.price,0,'POINT',3,'POINT')}"></span></td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <h3 style="float: right;">TỔNG TIỀN: <span>30000</span></h3>
+                                <h3 style="float: right;">TỔNG TIỀN: <span th:text="${#numbers.formatDecimal(totalPrice, 3, 'COMMA', 3, 'POINT')}"></span></h3>
                             </div>
                         </div>
                     </div>

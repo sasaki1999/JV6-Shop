@@ -24,12 +24,12 @@ public class OrderDetailEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "orderDetail_id")
-    private Integer OrderDetailId;
+     Integer OrderDetailId;
 
     @ManyToOne
     @JoinColumn(name = "order_id")
-    private OrderEntity order;
+     OrderEntity order;
 
     @ManyToOne @JoinColumn(name = "productDetail_id")
-    private ProductDetailEntity productDetail;
+     ProductDetailEntity productDetail;
 }

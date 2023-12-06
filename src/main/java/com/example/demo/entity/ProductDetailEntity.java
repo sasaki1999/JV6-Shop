@@ -33,23 +33,23 @@ public class ProductDetailEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "productDetail_id", nullable = false)
-    private Integer ProductDetailId;
+    Integer ProductDetailId;
 
     @Column(name = "quality")
     @NotEmpty(message = "Quality not empty")
-    private Double quality;
+    Double quality;
 
     @Column(name = "price")
     @NotEmpty(message = "Price not empty")
-    private BigDecimal price;
+    BigDecimal price;
 
     @JsonIgnore
     @OneToMany(mappedBy = "productDetail")
-    private List<OrderDetailEntity> orderDetailEntities;
+    List<OrderDetailEntity> orderDetailEntities;
 
     @JsonIgnore
     @OneToMany(mappedBy = "productDetail")
-    private List<CartEntity> cartEntities;
+    List<CartEntity> cartEntities;
 
     @ManyToOne
     @JoinColumn(name = "product_id")

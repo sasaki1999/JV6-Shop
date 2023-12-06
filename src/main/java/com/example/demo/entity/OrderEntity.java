@@ -41,7 +41,7 @@ public class OrderEntity implements Serializable {
 
     @JsonIgnore
     @OneToMany(mappedBy = "order")
-    private List<OrderDetailEntity> orderDetail;
+     List<OrderDetailEntity> orderDetail;
 
     @ManyToOne
     @JoinColumn(name = "payment_id")
