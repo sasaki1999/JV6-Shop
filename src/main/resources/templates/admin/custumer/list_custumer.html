@@ -33,43 +33,27 @@
                             <div class="table-responsive">
                                 <table id="example" class="display" style="min-width: 845px">
                                     <thead>
-                                        <tr>
-                                            <th>#</th>  
-                                            <th>Name</th>
-                                            <th>Adress</th>
-                                            <th>Office</th>
+                                        <tr>  
+                                            <th>Tên khách hàng</th>
                                             <th>Email</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                            <th>dsadsa</th>
+                                            <th>Số điện thoại</th>
+                                            <th>Địa chỉ</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="round-img">
-                                                    <a href="/admin/order"><img width="35" src="./images/avatar/1.png" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                            <td>dsadsa</td>
+                                        <tr th:each="custumer : ${custumers}">
+                                            <td th:text="${custumer.fullName}"></td>
+                                            <td th:text="${custumer.email}"></td>
+                                            <td th:text="${custumer.phoneNumber}"></td>
+                                            <td th:text="${custumer.address}"></td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                            <th>dsadsa</th>
+                                            <th>Tên khách hàng</th>
+                                            <th>Email</th>
+                                            <th>Số điện thoại</th>
+                                            <th>Địa chỉ</th>
                                         </tr>
                                     </tfoot>
                                 </table>
