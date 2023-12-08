@@ -81,8 +81,13 @@ public class CategoryDetailController {
     public String deleteProduct(@PathVariable("id") Integer id, Model model) {
         CategoriesDetailEntity categoriesDetailEntity = categoryDetailService.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
+        if (!categoriesDetailEntity.getProduct().isEmpty()) {
+            model.addAttribute("message", "Loại sản phẩm không thể xóa");
+            return "forward:/admin/categoriesDetail";
+        }
         categoryDetailService.delete(categoriesDetailEntity);
-        return "redirect:/admin/categoriesDetail";
+        model.addAttribute("message", "Xóa thành công !");
+        return "forward:/admin/categoriesDetail";
     }
 
     @ModelAttribute("categoriesAll")

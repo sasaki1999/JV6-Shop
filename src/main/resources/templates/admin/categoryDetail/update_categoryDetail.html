@@ -26,6 +26,15 @@
             <!-- --------------------------------------------------------- -->
             <div th:if="${message}" th:text="${message}" class="alert alert-success" role="alert"></div>
             <div class="card">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="/admin/categoriesDetail">
+                            <button style="float: right;" type="button" class="btn m-3 btn-primary">List CategoryDetail<span class="btn-icon-right"><i class="fa-solid fa-list"></i></i></span>
+                            </button>
+                        </a>
+                        
+                    </div>
+                </div>
                 <div class="card-body">
                     <form th:action="@{/admin/categoriesDetail/update/{id}(id=${categoriesDetail.CategoriesDetailId})}"  th:object="${categoriesDetail}" method="post" enctype="multipart/form-data">
                         <div class="mb-3">

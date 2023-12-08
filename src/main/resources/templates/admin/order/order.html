@@ -36,9 +36,8 @@
                                 <table class="table mb-0">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>STT</th>
                                             <th>Tên Khách hàng</th>
-                                            <th>Mã đơn hàng</th>
                                             <th>Ngày đặt hàng</th>
                                             <th>Giá</th>
                                             <th>Trạng thái</th>
@@ -46,9 +45,18 @@
                                     </thead>
                                     <tbody>
                                         <tr>
+                                            <td>1</td>
+                                            <td>Lew Shawon</td>
+                                            <td><span>4456465321</span></td>
+                                            <td><span>01/01/2023</span></td>
+                                            <td><span>456</span></td>
+                                            <td><span class="badge badge-success">Done</span></td>
+                                        </tr>
+                                        <tr>
                                             <td>
                                                 <div class="round-img">
-                                                    <a href="/admin/orderdetail"><img width="35" src="./images/avatar/1.png" alt=""></a>
+                                                    <a href="/admin/orderdetail"><img width="35"
+                                                            src="./images/avatar/1.png" alt=""></a>
                                                 </div>
                                             </td>
                                             <td>Lew Shawon</td>
@@ -60,7 +68,8 @@
                                         <tr>
                                             <td>
                                                 <div class="round-img">
-                                                    <a href="/admin/orderdetail"><img width="35" src="./images/avatar/1.png" alt=""></a>
+                                                    <a href="/admin/orderdetail"><img width="35"
+                                                            src="./images/avatar/1.png" alt=""></a>
                                                 </div>
                                             </td>
                                             <td>Lew Shawon</td>
@@ -72,7 +81,8 @@
                                         <tr>
                                             <td>
                                                 <div class="round-img">
-                                                    <a href="/admin/orderdetail"><img width="35" src="./images/avatar/1.png" alt=""></a>
+                                                    <a href="/admin/orderdetail"><img width="35"
+                                                            src="./images/avatar/1.png" alt=""></a>
                                                 </div>
                                             </td>
                                             <td>Lew Shawon</td>
@@ -84,19 +94,8 @@
                                         <tr>
                                             <td>
                                                 <div class="round-img">
-                                                    <a href="/admin/orderdetail"><img width="35" src="./images/avatar/1.png" alt=""></a>
-                                                </div>
-                                            </td>
-                                            <td>Lew Shawon</td>
-                                            <td><span>4456465321</span></td>
-                                            <td><span>01/01/2023</span></td>
-                                            <td><span>456</span></td>
-                                            <td><span class="badge badge-success">Done</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="round-img">
-                                                    <a href="/admin/orderdetail"><img width="35" src="./images/avatar/1.png" alt=""></a>
+                                                    <a href="/admin/orderdetail"><img width="35"
+                                                            src="./images/avatar/1.png" alt=""></a>
                                                 </div>
                                             </td>
                                             <td>Lew Shawon</td>
@@ -111,6 +110,52 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Basic Datatable</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="example" class="display" style="min-width: 845px">
+                                    <thead>
+                                        <tr> 
+                                            <th>STT</th>
+                                            <th>Tên Khách hàng</th>
+                                            <th>Ngày đặt hàng</th>
+                                            <th>Giá</th>
+                                            <th>Trạng thái</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="order,index : ${orders}" th:count="*{index.index}">
+                                            <td th:text="${index.count}"></td>
+                                            <td th:text="${order.account.fullName}"></td>
+                                            <td><span th:text="${order.orderDate}"></span></td>
+                                            <td><span th:text="${order.orderAmount}"></span></td>
+                                            <td><span class="badge badge-success" th:text="${order.orderStatus}?Done:Undone"></span></td>
+                                            <td>
+                                                <a th:href="@{/admin/custumer/orderDetail/{id}(id=${order.orderId})}">Xem chi tiet</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>STT</th>
+                                            <th>Tên Khách hàng</th>
+                                            <th>Ngày đặt hàng</th>
+                                            <th>Giá</th>
+                                            <th>Trạng thái</th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </main>
 </body>
 

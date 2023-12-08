@@ -6,16 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.OrderDAO;
-import com.example.demo.service.admin.AdminStatisticsService;
+import com.example.demo.entity.OrderEntity;
+import com.example.demo.service.admin.AdminOrderService;
+
 @Service
-public class AdminStatisticsServiceImpl implements AdminStatisticsService  {
+public class AdminOrderServiceImpl implements AdminOrderService{
     @Autowired
     OrderDAO orderDAO;
 
     @Override
-    public List<Object[]> findAll() {
-       return orderDAO.thongke();
+    public List<OrderEntity> findAll() {
+        return orderDAO.findAll();
     }
-
     
 }

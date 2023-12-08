@@ -28,6 +28,15 @@
             <!-- --------------------------------------------------------- -->
             <div th:if="${message}" th:text="${message}" class="alert alert-success" role="alert"></div>
             <div class="card">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="/admin/product">
+                            <button style="float: right;" type="button" class="btn m-3 btn-primary">List Product<span class="btn-icon-right"><i class="fa-solid fa-list"></i></span>
+                            </button>
+                        </a>
+                        
+                    </div>
+                </div>
                 <div class="card-body">
                     <form th:action="@{/admin/product/update/{id}(id=${product.ProductId})}" th:object="${product}" method="post" enctype="multipart/form-data">
                         <div class="row">

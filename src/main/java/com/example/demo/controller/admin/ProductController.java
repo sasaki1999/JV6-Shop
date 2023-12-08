@@ -72,7 +72,7 @@ public class ProductController {
         }
         adminProductService.create(product);
         model.addAttribute("message", "Thêm thành công");
-        return "redirect:/admin/product/showadd";
+        return "forward:/admin/product/showadd";
 
     }
 
@@ -114,10 +114,14 @@ public class ProductController {
     public String deleteProduct(@PathVariable("id") Integer id, Model model) {
         ProductEntity product = adminProductService.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
+        if (!product.getProductDetail().isEmpty()) {
+            model.addAttribute("message", "Sản phẩm không thể xóa");
+            return "forward:/admin/product";
+        }
         adminProductService.delete(product);
-        return "redirect:/admin/product";
+        model.addAttribute("message", "Xóa thành công !");
+        return "forward:/admin/product";
     }
-
 
     @ModelAttribute("brandalls")
     public Iterable<BrandEntity> getBrands() {

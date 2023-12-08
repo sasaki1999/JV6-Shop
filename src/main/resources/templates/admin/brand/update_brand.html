@@ -26,25 +26,23 @@
             <!-- --------------------------------------------------------- -->
             <div th:if="${message}" th:text="${message}" class="alert alert-success" role="alert"></div>
             <div class="card">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="/admin/brand">
+                            <button style="float: right;" type="button" class="btn m-3 btn-primary">List Brand<span class="btn-icon-right"><i class="fa-solid fa-list"></i></i></span>
+                            </button>
+                        </a>
+                        
+                    </div>
+                </div>
                 <div class="card-body">
-                    <form th:action="@{/admin/categoriesDetail/update/{id}(id=${categoriesDetail.CategoriesDetailId})}"  th:object="${categoriesDetail}" method="post" enctype="multipart/form-data">
-                        <div class="mb-3">
-                            <label for="" class="form-label">-- Select an option --</label>
-                            <select th:field="*{categories.CategoriesId}" id="input" class="form-control">
-                                <option value=""  selected="selected">chọn</option>
-                                <option th:each="ca : ${categoriesAll}" th:value="${ca.CategoriesId}"
-                                    th:text="${ca.CategoriesName}"></option>
-                            </select>
-                            <small class="text-danger" th:if="${#fields.hasErrors('categories.CategoriesId')}"
-                                th:errors="*{categories}">Help text</small>
-                        </div>
-
+                    <form th:action="@{/admin/brand/update/{id}(id=${brand.BrandId})}"  th:object="${brand}" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="" class="form-label">Name</label>
-                            <input type="text" th:field="*{CategoriesDetailName}" class="form-control"
+                            <input type="text" th:field="*{BrandName}" class="form-control"
                                 placeholder="">
-                            <small class="text-danger" th:if="${#fields.hasErrors('CategoriesDetailName')}"
-                                th:errors="*{CategoriesDetailName}">Help text</small>
+                            <small class="text-danger" th:if="${#fields.hasErrors('BrandName')}"
+                                th:errors="*{BrandName}">Help text</small>
                         </div>
                         <!-- <button th:formaction="@{/admin/categoriesDetail/add}"
                             class="btn btn-xs m-1 btn-rounded btn-info"><span class="btn-icon-left text-info"><i

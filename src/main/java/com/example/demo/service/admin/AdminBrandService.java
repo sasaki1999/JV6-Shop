@@ -3,7 +3,11 @@ package com.example.demo.service.admin;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+
 import com.example.demo.entity.BrandEntity;
+import com.example.demo.entity.CategoriesDetailEntity;
 
 /**
  * AdminBrandService
@@ -13,10 +17,12 @@ public interface AdminBrandService {
 	
 	public Optional<BrandEntity> findById(Integer id) ;
 
-	public BrandEntity create(BrandEntity major) ;
+	public Page<BrandEntity> findAll(Pageable pageable) ;
 
-	public BrandEntity update(BrandEntity major) ;
+	public BrandEntity create(BrandEntity brand) ;
 
-	public void delete(Integer id) ;
+	public BrandEntity update(BrandEntity brand) ;
+
+	public void delete(BrandEntity brand) ;
     
 }
