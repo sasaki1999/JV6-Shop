@@ -44,10 +44,13 @@ public class CategoryDetailController {
     public String add(@Validated @ModelAttribute("categoriesDetail") CategoriesDetailEntity categoriesDetail,
             Errors errors, Model model) {
         if (errors.hasErrors()) {
+            model.addAttribute("message_danger", "Thêm không thành công !");
             return "admin/categoryDetail/add_categoryDetail";
         }
         categoryDetailService.create(categoriesDetail);
         model.addAttribute("message", "Thêm thành công !");
+        CategoriesDetailEntity reset = new CategoriesDetailEntity(null, null, null, null);
+        model.addAttribute("categoriesDetail", reset);
         return "admin/categoryDetail/add_categoryDetail";
     }
 
@@ -62,6 +65,7 @@ public class CategoryDetailController {
             Model model) {
         categoriesDetail.setCategoriesDetailId(id);
         if (errors.hasErrors()) {
+            model.addAttribute("message_danger", "Cập nhật không thành công !");
             return "admin/categoryDetail/update_categoriesDetail";
         }
         categoryDetailService.create(categoriesDetail);
@@ -82,7 +86,7 @@ public class CategoryDetailController {
         CategoriesDetailEntity categoriesDetailEntity = categoryDetailService.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
         if (!categoriesDetailEntity.getProduct().isEmpty()) {
-            model.addAttribute("message", "Loại sản phẩm không thể xóa");
+            model.addAttribute("message_danger", "Loại sản phẩm không thể xóa");
             return "forward:/admin/categoriesDetail";
         }
         categoryDetailService.delete(categoriesDetailEntity);

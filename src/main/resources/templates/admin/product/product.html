@@ -25,6 +25,7 @@
             
             <div class="row">
                 <div th:if="${message}" th:text="${message}" class="alert alert-success" role="alert"></div>
+            <div th:if="${message_danger}" th:text="${message_danger}" class="alert alert-danger" role="alert"></div>
                 <div class="col-12">
                     <a href="/admin/product/showadd">
                         <button style="float: right;" type="button" class="btn m-3 btn-primary">Add to cart <span class="btn-icon-right"><i class="fa fa-shopping-cart"></i></span>

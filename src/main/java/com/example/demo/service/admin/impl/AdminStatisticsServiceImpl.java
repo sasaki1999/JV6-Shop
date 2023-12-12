@@ -13,8 +13,13 @@ public class AdminStatisticsServiceImpl implements AdminStatisticsService  {
     OrderDAO orderDAO;
 
     @Override
-    public List<Object[]> findAll() {
-       return orderDAO.thongke();
+    public List<Object[]> findAll(String year) {
+       return orderDAO.thongke(year);
+    }
+
+    @Override
+    public List<Object[]> findByYear() {
+       return orderDAO.Year();
     }
 
     

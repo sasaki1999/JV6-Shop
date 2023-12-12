@@ -68,10 +68,13 @@ public class ProductController {
             return "admin/product/add_product";
         }
         if (result.hasErrors()) {
+            model.addAttribute("message_danger", "Thêm không thành công !");
             return "admin/product/add_product";
         }
         adminProductService.create(product);
         model.addAttribute("message", "Thêm thành công");
+        ProductEntity reset = new ProductEntity(null, UPLOAD_DIRECTORY, UPLOAD_DIRECTORY, UPLOAD_DIRECTORY, null, null, null, null, null);
+        model.addAttribute("product", reset);
         return "forward:/admin/product/showadd";
 
     }
@@ -102,6 +105,7 @@ public class ProductController {
             return "admin/product/update_product";
         }
         if (result.hasErrors()) {
+            model.addAttribute("message_danger", "Cập nhật không thành công !");
             return "admin/product/update_product";
         }
         adminProductService.update(product);
@@ -115,7 +119,7 @@ public class ProductController {
         ProductEntity product = adminProductService.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
         if (!product.getProductDetail().isEmpty()) {
-            model.addAttribute("message", "Sản phẩm không thể xóa");
+            model.addAttribute("message_danger", "Sản phẩm không thể xóa");
             return "forward:/admin/product";
         }
         adminProductService.delete(product);

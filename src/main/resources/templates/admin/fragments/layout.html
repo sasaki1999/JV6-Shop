@@ -138,10 +138,14 @@
 
                         <ul class="navbar-nav header-right">
                             <li class="nav-item dropdown notification_dropdown">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                <!-- <a class="nav-link" href="#" role="button" data-toggle="dropdown">
                                     <i class="mdi mdi-bell"></i>
                                     <div class="pulse-css"></div>
-                                </a>
+                                </a> -->
+                                <div>
+                                    <a href="?lang=vi">Tiếng Việt</a>|
+                                    <a href="?lang=en">English</a>
+                                </div>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <ul class="list-unstyled">
                                         <li class="media dropdown-item">
@@ -235,30 +239,30 @@
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="fa-solid fa-store"></i>
-                            <span class="nav-text">QUẢN LÝ SẢN PHẨM</span></a>
+                            <span class="nav-text" th:text="#{menu.productM}">QUẢN LÝ SẢN PHẨM</span></a>
                         <ul aria-expanded="false">
-                            <li><a th:href="@{/admin/product}">SẢN PHẨM</a></li>
-                            <li><a th:href="@{/admin/categoriesDetail}">LOẠI SẢN PHẢM CHI TIẾT</a></li>
-                            <li><a th:href="@{/admin/brand}">THƯƠNG HIỆU</a></li>
+                            <li><a th:href="@{/admin/product}" th:text="#{menu.product}">SẢN PHẨM</a></li>
+                            <li><a th:href="@{/admin/categoriesDetail}" th:text="#{menu.productT}">LOẠI SẢN PHẢM CHI TIẾT</a></li>
+                            <li><a th:href="@{/admin/brand}" th:text="#{menu.trademark}">THƯƠNG HIỆU</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a th:href="@{#3}" aria-expanded="false"><i class="fa-solid fa-tag"></i><span class="nav-text">SẢN PHẨM GIẢM GIÁ
                                 </span></a>
-                    </li>
+                    </li> -->
                     <li>
                         <a th:href="@{/admin/order}" aria-expanded="false"><i
-                                class="fa-solid fa-cart-shopping"></i><span class="nav-text">QUẢN LÝ ĐƠN HÀNG</span></a>
+                                class="fa-solid fa-cart-shopping"></i><span class="nav-text" th:text="#{menu.orderM}">QUẢN LÝ ĐƠN HÀNG</span></a>
                     </li>
                     
-                    <li class="nav-label">TÀI KHOẢN & KHÁCH HÀNG</li>
+                    <li class="nav-label" >TÀI KHOẢN & KHÁCH HÀNG</li>
                     <li>
                         <a th:href="@{/admin/custumer}" aria-expanded="false"><i 
-                            class="fa-solid fa-address-book"></i><span class="nav-text">THÔNG TIN KHÁCH HÀNG</span></a>
+                            class="fa-solid fa-address-book"></i><span class="nav-text" th:text="#{menu.customer}">THÔNG TIN KHÁCH HÀNG</span></a>
                     </li>
                     <li class="nav-label">THỐNG KÊ</li>
                     <li>
-                        <a  th:href="@{/admin/statistics}" aria-expanded="false"><i class="fa-solid fa-chart-pie"></i><span class="nav-text">THỐNG KÊ DOANH THU</span></a>
+                        <a  th:href="@{/admin/statistics}" aria-expanded="false"><i class="fa-solid fa-chart-pie"></i><span class="nav-text" th:text="#{menu.statistics}">THỐNG KÊ DOANH THU</span></a>
                         
                     </li>           
                 </ul>

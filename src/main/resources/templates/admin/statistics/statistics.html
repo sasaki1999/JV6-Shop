@@ -28,7 +28,7 @@
                 </div>
             </div>
             <!-- --------------------------------------------------------- -->
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -43,49 +43,47 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
+                                <div class="col_12">
+                                    
+                                    <select class="form-control m-3" id="mySelect" th:onchange="handleChange()">
+                                        <option value="" disabled selected>Chọn Năm</option>
+                                        <option th:each="item : ${year}" th:value="${item[0]}" th:text="${item[0]}" ></option>
+                                    </select>
+                                </div>
                                 <div class="col-12">
-                                    <div class="card">
+                                    <div class="card"> 
                                         <div class="card-header">
-                                            <h4 class="card-title">Basic Datatable</h4>
+                                            <h4 class="card-title"> Thống Kê [[${nam}]]</h4>
                                         </div>
                                         <div class="card-body">
                                             <div class="table-responsive">
                                                 <table id="example" class="display" style="min-width: 845px">
                                                     <thead>
                                                         <tr>
-                                                            <th>Name</th>
-                                                            <th>Position</th>
-                                                            <th>Office</th>
-                                                            <th>Age</th>
-                                                            <th>Start date</th>
-                                                            <th>Salary</th>
+                                                            <th>Tháng</th>
+                                                            <th>Số lượng đơn hàng</th>
+                                                            <th>Tổng doanh thu</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr>
-                                                            <td th:each="item : ${items}">Tiger Nixon</td>
-                                                            <td>System Architect</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>61</td>
-                                                            <td>2011/04/25</td>
-                                                            <td>$320,800</td>
+                                                        <tr th:each="item : ${items}">
+                                                            <td th:text="${item[2]}">Tiger Nixon</td>
+                                                            <td th:text="${item[0]}">System Architect</td>
+                                                            <td th:text="${item[1]}"></td>
                                                         </tr>                                                        
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
-                                                            <th>Name</th>
-                                                            <th>Position</th>
-                                                            <th>Office</th>
-                                                            <th>Age</th>
-                                                            <th>Start date</th>
-                                                            <th>Salary</th>
+                                                            <th>Tháng</th>
+                                                            <th>Số lượng đơn hàng</th>
+                                                            <th>Tổng doanh thu</th>
                                                         </tr>
                                                     </tfoot>
                                                 </table>
@@ -99,6 +97,16 @@
                 </div>
             </div>
         </div>
+        <script th:inline="javascript">
+            function handleChange() {
+            var selectedValue = document.getElementById("mySelect").value;
+            console.log("Selected value: " + selectedValue);
+            
+            window.location.href='/admin/statistics/'+selectedValue;
+            
+            
+        }
+        </script>
     </main>
 </body>
 

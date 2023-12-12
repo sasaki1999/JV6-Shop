@@ -40,10 +40,13 @@ public class BardController {
     public String add(@Validated @ModelAttribute("brand")  BrandEntity brand,
             Errors errors, Model model) {
         if (errors.hasErrors()) {
+            model.addAttribute("message_danger", "Thêm thất bại !");
             return "admin/categoryDetail/add_categoryDetail";
         }
         brandService.create(brand);
         model.addAttribute("message", "Thêm thành công !");
+        BrandEntity resetbrand = new BrandEntity(null, null, null);
+        model.addAttribute("brand", resetbrand);
         return "admin/brand/add_brand";
     }
 
@@ -58,6 +61,7 @@ public class BardController {
             Model model) {
         brand.setBrandId(id);
         if (errors.hasErrors()) {
+            model.addAttribute("message_danger", "Cập nhật không thành công !");
             return "admin/brand/update_brand";
         }
         brandService.create(brand);
@@ -78,7 +82,7 @@ public class BardController {
         BrandEntity brand = brandService.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
         if (!brand.getProduct().isEmpty()) {
-            model.addAttribute("message","Thương hiệu đang có sản phẩm");
+            model.addAttribute("message_danger","Thương hiệu đang có sản phẩm");
             return "forward:/admin/brand";
         }
         brandService.delete(brand);
