@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-    @RequestMapping("/categor")
+    @RequestMapping("/categories")
 public class UserCategoriesController {
     @GetMapping("/login")
     public String index() {
