@@ -28,4 +28,8 @@ public interface ProductDetailService {
     List<ProductDetailEntity> findByCategoryByProductTypeByProducts(int categoryId);
 
     List<Object[]> findByCategoryIdAndProductTypeId(int categoryId, int productTypeId);
+
+    static ProductDetailEntity findProductByProductDetailId(Integer productId) {
+        return null;
+    }
 }

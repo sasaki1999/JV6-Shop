@@ -70,4 +70,8 @@ public class AccountEntity implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "account")
     List<OrderEntity> order;
+
+    public int getId() {
+        return 0;
+    }
 }

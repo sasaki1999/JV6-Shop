@@ -12,6 +12,10 @@ public interface ProductService {
 
     List<ProductEntity> findAll();
 
+    ProductEntity findProductByProductId(Integer productId);
+
+    List<Integer> findPriceProductByUserId(int id);
+
 
     
 }
