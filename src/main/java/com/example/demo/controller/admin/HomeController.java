@@ -11,6 +11,8 @@ public class HomeController {
     public String index() {
         return "admin/index";
     }
-    
-    
+    @RequestMapping("/authorize")
+    public String authoreted(){
+        return "admin/authorize/authorize";
+    }
 }

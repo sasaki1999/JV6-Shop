@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{admin/fragments/layout :: fragments(~{::main})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main ng-app="app" ng-controller="ctrl">
+        <div class="container-fluid">
+            <div class="row page-titles mx-0">
+                <div class="col-sm-6 p-md-0">
+                    <div class="welcome-text">
+                        <h4>MÃ GIẢM GIÁ</h4>
+                    </div>
+                </div>
+                <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Layout</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Blank</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- --------------------------------------------------------- -->
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Basic</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table ng-if="db" class="table table-responsive-sm">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th ng-repeat="role in db.roles">{{role.roleName}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="acc in db.accounts">
+                                        <th>{{acc.userName}}</th>
+                                        <th ng-repeat="role in db.roles">
+                                            <input type="checkbox" ng-checked="index_of(acc.userName, role.roleId) >= 0"
+                                                ng-click="update(acc.userName,acc.accountId, role.roleId)">
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="authorize.js"></script>
+
+        </div>
+
+    </main>
+</body>
+
+</html>

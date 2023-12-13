@@ -13,6 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 import java.io.Serializable;
 
@@ -31,7 +32,7 @@ public class AuthEntity implements Serializable {
     private Integer AuthId;
 
     @ManyToOne
-    @JoinColumn(name = "account_id")
+    @JoinColumn(name = "account_id",unique = false)
     AccountEntity account;
 
     @ManyToOne

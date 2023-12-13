@@ -74,6 +74,7 @@
 }
     </style>
 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
 
 <body>
@@ -246,10 +247,6 @@
                             <li><a th:href="@{/admin/brand}" th:text="#{menu.trademark}">THƯƠNG HIỆU</a></li>
                         </ul>
                     </li>
-                    <!-- <li>
-                        <a th:href="@{#3}" aria-expanded="false"><i class="fa-solid fa-tag"></i><span class="nav-text">SẢN PHẨM GIẢM GIÁ
-                                </span></a>
-                    </li> -->
                     <li>
                         <a th:href="@{/admin/order}" aria-expanded="false"><i
                                 class="fa-solid fa-cart-shopping"></i><span class="nav-text" th:text="#{menu.orderM}">QUẢN LÝ ĐƠN HÀNG</span></a>
@@ -259,6 +256,10 @@
                     <li>
                         <a th:href="@{/admin/custumer}" aria-expanded="false"><i 
                             class="fa-solid fa-address-book"></i><span class="nav-text" th:text="#{menu.customer}">THÔNG TIN KHÁCH HÀNG</span></a>
+                    </li>
+                    <li>
+                        <a th:href="@{/admin/authorize}" aria-expanded="false"><i class="fa-solid fa-lock"></i><span class="nav-text" th:text="#{menu.authorizing}">
+                                </span></a>
                     </li>
                     <li class="nav-label">THỐNG KÊ</li>
                     <li>
